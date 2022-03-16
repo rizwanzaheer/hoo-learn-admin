@@ -1,4 +1,4 @@
-# ⚡ Vite + Vue 3 + Tailwind CSS ✔
+# ⚡ Hoo Learn Admin with Vite + Vue 3 + Tailwind CSS ✔
 
 ![Vite, Vue, Ant Design, Tailwind CSS]
 
@@ -23,14 +23,14 @@ First-party plugins needed for Tailwind UI:
 
 ### Getting Started
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rizwanzaheer/hoo-learn)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rizwanzaheer/hoo-learn-admin)
 
 
 ```sh
-npm i
-npm run dev
-npm run build
-npm run serve
+npm i or yarn
+npm run dev or yarn dev
+npm run build or yarn build
+npm run serve or yarn serve
 ```
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rizwanzaheer/hoo-learn)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/rizwanzaheer/hoo-learn-admin)
