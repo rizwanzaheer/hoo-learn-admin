@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import CKEditor from '@ckeditor/ckeditor5-vue';
 
 // 3rd parties libs
 import Antd from 'ant-design-vue';
@@ -32,4 +33,5 @@ app.use(router);
 app.use(store);
 app.use(i18n);
 app.use(Antd);
+app.use(CKEditor);
 app.mount('#app');
