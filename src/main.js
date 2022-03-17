@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+
+// CK editor
 import CKEditor from '@ckeditor/ckeditor5-vue';
 
 // 3rd parties libs

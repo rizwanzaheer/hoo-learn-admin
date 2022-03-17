@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from 'vue'
-import ButtonRepo from "@/components/ButtonRepo.vue";
-import Header from "@/components/Header.vue";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { ref } from 'vue';
+import ButtonRepo from '@/components/ButtonRepo.vue';
+import Header from '@/components/Header.vue';
+import '@ckeditor/ckeditor5-build-classic/build/translations/zh-cn';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 // import EssentialsPlugin from "@ckeditor/ckeditor5-essentials/src/essentials";
 // import BoldPlugin from "@ckeditor/ckeditor5-basic-styles/src/bold";
@@ -12,30 +13,34 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // variables
 const editor = ClassicEditor;
-const editorData = ref("<p>Test Content of the editor.</p>");
+const editorData = ref('<p>Test Content of the editor.</p>');
 const editorConfig = {
   //   plugins: [EssentialsPlugin, BoldPlugin, ItalicPlugin, LinkPlugin, ParagraphPlugin],
   // toolbar: {
   //   items: ["bold", "italic", "link", "undo", "redo"],
   // },
-   ckfinder: {
-        uploadUrl: 'http://www.mypage.com/api/uploadckeditor'
-      },
+  language: 'en',
+  ckfinder: {
+    uploadUrl: 'https://33333.cke-cs.com/easyimage/upload/',
+  },
 };
 
 // compiler macros
 const props = defineProps({
-  foo: String
-})
+  foo: String,
+});
 
-const emit = defineEmits(['change', 'delete'])
+const emit = defineEmits(['change', 'delete']);
 
 // Methods
 const onEditorFocus = () => {
-  console.log("onEditorFocus is calling!!!");
+  console.log('onEditorFocus is calling!!!');
 };
 function emptyEditor() {
-  editorData.value = "";
+  editorData.value = '';
+}
+function getEditorData() {
+  console.log('editorData.value is: ',editorData.value);
 }
 </script>
 
@@ -43,8 +48,15 @@ function emptyEditor() {
   <div class="bg-gray-50">
     <Header />
 
-    <ckeditor :editor="editor" v-model="editorData" @focus="onEditorFocus" :config="editorConfig"></ckeditor>
+    <ckeditor
+      :editor="editor"
+      v-model="editorData"
+      :config="editorConfig"
+      @focus="onEditorFocus"
+    ></ckeditor>
     <button @click="emptyEditor">reset editor</button>
+    <br />
+    <button @click="getEditorData">Get Editor data</button>
     <div
       class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8"
     >
@@ -72,10 +84,8 @@ function emptyEditor() {
   </div>
 </template>
 
-
-
 <style scoped>
 .ck-editor > ul {
-list-style: auto;
+  list-style: auto;
 }
 </style>
