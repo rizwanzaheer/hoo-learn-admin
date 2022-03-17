@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from 'vue';
-import ButtonRepo from '@/components/ButtonRepo.vue';
-import Header from '@/components/Header.vue';
-import '@ckeditor/ckeditor5-build-classic/build/translations/zh-cn';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { ref } from "vue";
+import ButtonRepo from "@/components/ButtonRepo.vue";
+import Header from "@/components/Header.vue";
+import "@ckeditor/ckeditor5-build-classic/build/translations/zh-cn";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // import EssentialsPlugin from "@ckeditor/ckeditor5-essentials/src/essentials";
 // import BoldPlugin from "@ckeditor/ckeditor5-basic-styles/src/bold";
@@ -13,15 +13,23 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 // variables
 const editor = ClassicEditor;
-const editorData = ref('<p>Test Content of the editor.</p>');
+const editorData = ref("");
 const editorConfig = {
   //   plugins: [EssentialsPlugin, BoldPlugin, ItalicPlugin, LinkPlugin, ParagraphPlugin],
   // toolbar: {
   //   items: ["bold", "italic", "link", "undo", "redo"],
   // },
-  language: 'en',
+  language: "en",
+  // or different multiple support langue with different language ui
+  // language: {
+  //      // The UI will be English.
+  //      ui: 'en',
+
+  //      // But the content will be edited in Arabic.
+  //      content: 'ar'
+  //  }
   ckfinder: {
-    uploadUrl: 'https://33333.cke-cs.com/easyimage/upload/',
+    uploadUrl: "https://33333.cke-cs.com/easyimage/upload/",
   },
 };
 
@@ -30,22 +38,22 @@ const props = defineProps({
   foo: String,
 });
 
-const emit = defineEmits(['change', 'delete']);
+const emit = defineEmits(["change", "delete"]);
 
 // Methods
 const onEditorFocus = () => {
-  console.log('onEditorFocus is calling!!!');
+  console.log("onEditorFocus is calling!!!");
 };
 function emptyEditor() {
-  editorData.value = '';
+  editorData.value = "";
 }
 function getEditorData() {
-  console.log('editorData.value is: ',editorData.value);
+  console.log("editorData.value is: ", editorData.value);
 }
 </script>
 
 <template>
-  <div class="bg-gray-50">
+  <div class="bg-gray-50 mx-[10%]">
     <Header />
 
     <ckeditor
@@ -53,6 +61,7 @@ function getEditorData() {
       v-model="editorData"
       :config="editorConfig"
       @focus="onEditorFocus"
+      tag-name="textarea"
     ></ckeditor>
     <button @click="emptyEditor">reset editor</button>
     <br />

@@ -9,6 +9,7 @@ import Antd from 'ant-design-vue';
 
 // css
 import './tailwind.css';
+// import './styles/app.css';
 
 import 'ant-design-vue/dist/antd.css';
 
