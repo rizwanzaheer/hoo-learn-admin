@@ -18,6 +18,9 @@ const editorConfig = {
   // toolbar: {
   //   items: ["bold", "italic", "link", "undo", "redo"],
   // },
+   ckfinder: {
+        uploadUrl: 'http://www.mypage.com/api/uploadckeditor'
+      },
 };
 
 // compiler macros
@@ -40,7 +43,7 @@ function emptyEditor() {
   <div class="bg-gray-50">
     <Header />
 
-    <ckeditor :editor="editor" v-model="editorData" @focus="onEditorFocus"></ckeditor>
+    <ckeditor :editor="editor" v-model="editorData" @focus="onEditorFocus" :config="editorConfig"></ckeditor>
     <button @click="emptyEditor">reset editor</button>
     <div
       class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8"
