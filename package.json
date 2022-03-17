@@ -16,6 +16,7 @@
     "@ckeditor/ckeditor5-theme-lark": "^33.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
     "ant-design-vue": "^2.2.8",
+    "ckeditor-tailwind-reset": "^1.0.5",
     "moment": "^2.29.1",
     "vite-plugin-components": "^0.13.3",
     "vue": "3.2.30",
