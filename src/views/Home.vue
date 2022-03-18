@@ -1,10 +1,31 @@
 <script setup>
-import { ref } from "vue";
-import ButtonRepo from "@/components/ButtonRepo.vue";
-import Header from "@/components/Header.vue";
-import "@ckeditor/ckeditor5-build-classic/build/translations/zh-cn";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { ref, useSlots, useAttrs,inject,onMounted } from 'vue';
+import ButtonRepo from '@/components/ButtonRepo.vue';
+import Header from '@/components/Header.vue';
+import '@ckeditor/ckeditor5-build-classic/build/translations/zh-cn';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+const slots = useSlots();
+const attrs = useAttrs();
+const axios = inject('axios');
+
+onMounted(async () => {
+  await axios
+    .get('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => {
+      console.log("response.data is: ",response.data);
+    })
+})
+
+async function test() {
+  const {data} = await axios(`https://jsonplaceholder.typicode.com/todos/1`);
+
+  console.log('res is: ', data);
+}
+
+test();
+
+// res.response.json()
 // import EssentialsPlugin from "@ckeditor/ckeditor5-essentials/src/essentials";
 // import BoldPlugin from "@ckeditor/ckeditor5-basic-styles/src/bold";
 // import ItalicPlugin from "@ckeditor/ckeditor5-basic-styles/src/italic";
@@ -13,13 +34,13 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 // variables
 const editor = ClassicEditor;
-const editorData = ref("");
+const editorData = ref('<p>adfadf</p><ul><li>adfad</li><li>adfaf</li><li>adf</li></ul><ol><li>fadfadf</li><li>adfdsfad</li></ol>');
 const editorConfig = {
   //   plugins: [EssentialsPlugin, BoldPlugin, ItalicPlugin, LinkPlugin, ParagraphPlugin],
   // toolbar: {
   //   items: ["bold", "italic", "link", "undo", "redo"],
   // },
-  language: "en",
+  language: 'en', // zh-cn
   // or different multiple support langue with different language ui
   // language: {
   //      // The UI will be English.
@@ -29,7 +50,7 @@ const editorConfig = {
   //      content: 'ar'
   //  }
   ckfinder: {
-    uploadUrl: "https://33333.cke-cs.com/easyimage/upload/",
+    uploadUrl: 'https://33333.cke-cs.com/easyimage/upload/',
   },
 };
 
@@ -38,17 +59,17 @@ const props = defineProps({
   foo: String,
 });
 
-const emit = defineEmits(["change", "delete"]);
+const emit = defineEmits(['change', 'delete']);
 
 // Methods
 const onEditorFocus = () => {
-  console.log("onEditorFocus is calling!!!");
+  console.log('onEditorFocus is calling!!!');
 };
 function emptyEditor() {
-  editorData.value = "";
+  editorData.value = '';
 }
 function getEditorData() {
-  console.log("editorData.value is: ", editorData.value);
+  console.log('editorData.value is: ', editorData.value);
 }
 </script>
 
@@ -63,9 +84,10 @@ function getEditorData() {
       @focus="onEditorFocus"
       tag-name="textarea"
     ></ckeditor>
-    <button @click="emptyEditor">reset editor</button>
+     <a-button type="primary"  @click="emptyEditor">Reset Editor</a-button>
     <br />
-    <button @click="getEditorData">Get Editor data</button>
+    <br />
+     <a-button type="primary" @click="getEditorData">Get Editor data</a-button>
     <div
       class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8"
     >
@@ -92,9 +114,3 @@ function getEditorData() {
     </div>
   </div>
 </template>
-
-<style scoped>
-.ck-editor > ul {
-  list-style: auto;
-}
-</style>

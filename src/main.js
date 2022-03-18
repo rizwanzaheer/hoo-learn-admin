@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
 // CK editor
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -37,4 +39,7 @@ app.use(store);
 app.use(i18n);
 app.use(Antd);
 app.use(CKEditor);
+app.use(VueAxios, axios);
+app.provide('axios', app.config.globalProperties.axios);
+
 app.mount('#app');
