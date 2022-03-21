@@ -1,8 +1,6 @@
 <script setup>
 import { ref, useSlots, useAttrs, inject, onMounted, computed } from "vue";
-import { usePagination } from 'vue-request';
-
-import HttpService from "@/services/HttpService";
+import { usePagination } from "vue-request";
 
 // import "@ckeditor/ckeditor5-build-classic/build/translations/zh-cn";
 // import Font from "@ckeditor/ckeditor5-font/src/font";
@@ -10,7 +8,6 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 import ButtonRepo from "@/components/ButtonRepo.vue";
 import Header from "@/components/Header.vue";
-
 
 const columns = [
   {
@@ -51,13 +48,16 @@ const slots = useSlots();
 const attrs = useAttrs();
 const axios = inject("axios");
 
-const { data: tableDataSource, run, loading, current, pageSize } = usePagination(queryData, {
-  formatResult: (res) => res.results,
-  pagination: {
-    currentKey: "page",
-    pageSizeKey: "results",
-  },
-});
+const { data: tableDataSource, run, loading, current, pageSize } = usePagination(
+  queryData,
+  {
+    formatResult: (res) => res.results,
+    pagination: {
+      currentKey: "page",
+      pageSizeKey: "results",
+    },
+  }
+);
 const pagination = computed(() => ({
   total: 200,
   current: current.value,
@@ -75,7 +75,7 @@ const handleTableChange = (pag, filters, sorter) => {
 };
 
 onMounted(async () => {
-  await HttpService.get("https://jsonplaceholder.typicode.com/todos/1").then((response) => {
+  await axios.get("https://jsonplaceholder.typicode.com/todos/1").then((response) => {
     console.log("response.data is: ", response.data);
   });
 });

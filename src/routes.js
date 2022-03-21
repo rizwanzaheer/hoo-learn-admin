@@ -1,6 +1,6 @@
-import Home from './views/Home.vue'
-import About from './views/About.vue'
-import NotFound from './views/NotFound.vue'
+import Home from './pages/Home.vue';
+import About from './pages/About.vue';
+import NotFound from './pages/NotFound.vue';
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 export const routes = [
@@ -15,4 +15,4 @@ export const routes = [
     // component: () => import('./views/About.vue')
   },
   { path: '/:path(.*)', component: NotFound },
-]
+];
