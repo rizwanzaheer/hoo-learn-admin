@@ -1587,6 +1587,11 @@ vue-i18n@9:
     "@intlify/vue-devtools" "9.1.9"
     "@vue/devtools-api" "^6.0.0-beta.7"
 
+vue-request@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/vue-request/-/vue-request-1.2.4.tgz#02ab150cc2903605464e6efcb501c480d9dd536f"
+  integrity sha512-i+i+6Fog6F8EtYUeueumzKS9Sg06CvjsMXH8TK0YSBxY4sDxIJ+snTEke5rLqiV9d19DTuJOxPQFjTBUpsMtXA==
+
 vue-router@^4.0.12:
   version "4.0.14"
   resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.0.14.tgz"
