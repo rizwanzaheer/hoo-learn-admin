@@ -16,11 +16,11 @@ import logoMicrosoft from "@/assets/logo_microsoft.svg";
       >
         <div>
           <h1 class="mb-0">Hoo Learn content management system</h1>
-          <p class="my-4 mx-auto">
+          <p class="mt-4 mb-6 mx-auto">
             The ultimate tool for the content creators to write and publish a
             content in Hoo learning portal
           </p>
-          <a-button class="mt-6 mx-auto"> <img :src="logoMicrosoft"/> Login with Microsoft Account </a-button>
+          <a-button class="mx-auto"><img class="!mt-[5px]" :src="logoMicrosoft"/> Login with Microsoft Account </a-button>
         </div>
       </div>
     </div>
