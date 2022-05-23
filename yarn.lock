@@ -314,10 +314,10 @@
   dependencies:
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-vue@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-vue/-/ckeditor5-vue-2.0.1.tgz#f187cce9a4b116592a4e6feab09d8a6c991831d6"
-  integrity sha512-EriE1OQVNj1uhn3UL3myYY3JTfcUWHO46Yqga8U+/61V5vU3tIV6Z7/9q/MYe8UcFk0AM1sZcYXaKvWW57vnwg==
+"@ckeditor/ckeditor5-vue@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-vue/-/ckeditor5-vue-4.0.1.tgz#1c619162bcef3922c0b02c05a0908ee48f449a23"
+  integrity sha512-QjlQYY0DVqpk+Oj3aDxtcgknet6xquGwjdGLVxgJh6hP+IOpcHldk0BQgMNPiF4T5Ojj37N55IEkaHdQcCLQlA==
 
 "@ckeditor/ckeditor5-widget@^33.0.0":
   version "33.0.0"
