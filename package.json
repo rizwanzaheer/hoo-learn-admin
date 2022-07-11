@@ -15,7 +15,7 @@
     "@ckeditor/ckeditor5-paragraph": "^33.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^33.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
-    "ant-design-vue": "^2.2.8",
+    "ant-design-vue": "^3.2.10",
     "axios": "^0.26.1",
     "ckeditor-tailwind-reset": "^1.0.5",
     "moment": "^2.29.1",
