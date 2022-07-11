@@ -18,7 +18,7 @@
     "ant-design-vue": "^2.2.8",
     "axios": "^0.26.1",
     "ckeditor-tailwind-reset": "^1.0.5",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "vite-plugin-components": "^0.13.3",
     "vue": "3.2.30",
     "vue-axios": "^3.4.1",
